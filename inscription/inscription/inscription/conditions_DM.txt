@@ -1,0 +1,56 @@
+
+Conditions du programme en c++
+
+
+- doit contenir une classe et au moins une classe dérivée de cette classe. ok
+
+
+        une classe dérivée est une classe qui hérite d'une autre classe appelée classe de base ou classe parent.
+	La classe dérivée peut utiliser tous les attributs et méthodes de la classe de base et peut également 
+	définir de nouvelles propriétés et méthodes.
+
+
+- doit contenir une classe utilisant une autre classe (relation d'association) nok
+
+	La relation d'association est une relation entre deux classes qui indique que l'une des classes utilise l'autre de manière significative. 
+	Cette relation peut être représentée graphiquement en utilisant une flèche qui part de l'une des classes et pointe vers l'autre.
+
+
+- Faire diagramme de classe ok
+ 
+
+----------------------
+
+Etapes
+
+
+- Interface graphique  OK
+
+- Implementation des données de l'interface graphique OK
+
+- Création de classes OK ~ (l'intervenant doit pouvoir choisir plusieurs modules si besoin, à voir cmt implémenter ça..)
+
+- Relier les classes avec les données de l'interface graphique ok
+
+- Faire le diagramme de classes OK
+
+
+
+plus tard
+
+- relier les données à une bdd
+
+- implémenter la prise de photo
+
+- cacher le code secret (****)
+
+- améliorer le visuel
+
+
+
+A MODIFIER
+
+attribut protected = accesibilité aux héritiers de la clase
+pas besoin du coup de mettre des accesseurs et des setters !!  A CHANGER
+
+
