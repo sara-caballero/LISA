@@ -51,3 +51,9 @@ void fenetre_etudiant::on_bouton_clicked()
     ui->resultat->setText(nom_etu + " " + prenom_etu + " " + promotion); //tout ok
 }
 
+
+void fenetre_etudiant::on_bouton_photo_clicked()
+{
+
+}
+

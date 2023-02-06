@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>646</width>
-    <height>500</height>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,8 +67,8 @@
   <widget class="QPushButton" name="bouton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>380</y>
+     <x>460</x>
+     <y>420</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -199,14 +199,68 @@ les étudiants</string>
   <widget class="QLabel" name="resultat">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>370</y>
+     <x>350</x>
+     <y>360</y>
      <width>201</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>320</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Photo</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="code_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>390</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Non prise</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bouton_photo">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>350</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Prendre photo</string>
    </property>
   </widget>
  </widget>

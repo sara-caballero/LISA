@@ -27,6 +27,8 @@ private slots:
 
     void on_bouton_clicked();
 
+    void on_bouton_photo_clicked();
+
 private:
     Ui::fenetre_etudiant *ui;
 };
