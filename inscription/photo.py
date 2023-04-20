@@ -18,20 +18,10 @@ def next_id_photo():
     return id_photo
 
 
-#print(max_known_faces())
-# print(type(max_known_faces()))
-#print (next_id_photo())
-# print(type(next_id_photo()))
-
 id_photo = next_id_photo()
 
 
-if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque je l'importe dans main.py il faut mettre ça
-
-
-
-    # lister les fichiers du dossier
-    # print(os.listdir('c:/lisa/rec_faciale/easy_facial_recognition-master/known_faces'))
+if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque je l'importe dans inscription.py il faut mettre ça
 
     fileName = os.environ['ALLUSERSPROFILE'] + "\WebcamCap.txt"
     cancel = False
