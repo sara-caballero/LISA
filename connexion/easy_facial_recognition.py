@@ -153,7 +153,6 @@ def my_reco():
         ret, frame = video_capture.read()
 #        easy_face_reco(frame, known_face_encodings, known_face_names)
         nom_detecte = easy_face_reco(frame, fichiers[1], fichiers[0])
-        print(nom_detecte)
         cv2.imshow('Easy Facial Recognition App', frame)
 
        # if nom_detecte != "" and nom_detecte != "Unknown":

@@ -22,7 +22,6 @@ def open_reco_faciale():
         messagebox.showerror("Error", "Visage pas reconnu. Veuillez vous inscrire à LISA ou vous identifier avec votre e-mail.")
         exit(1)
     print(type(nom_reco))
-    #os.system("connexion_reco_faciale.py")
     conn = MySQLdb.connect("172.16.20.140", "dba", "ghjk", "lisa_db")
     cur = conn.cursor()
     cur.execute("select * from eleve where id_photo=%s", (nom_reco))
@@ -36,15 +35,13 @@ def open_reco_faciale():
         else:
             nom = row[3]
             prenom = row[4]
-            messagebox.showinfo("Success", "Bienvenue {} {}".format(prenom, nom))
-            #messagebox.showinfo("Success", "Bienvenue")
+            messagebox.askquestion("Success", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
             print(row)
             print(type(row))
     else:
         nom = row[3]
         prenom = row[4]
-        messagebox.showinfo("Success", "Bienvenue {} {}".format(prenom, nom))
-        # messagebox.showinfo("Success", "Bienvenue")
+        messagebox.askquestion("Success", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
         print(row)
         print(type(row))
 
