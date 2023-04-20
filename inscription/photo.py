@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 
 
 def files_known_faces():  # Retourne un tableau avec les noms de fichiers (String) du dossier known_faces au moment de l'execution sans l'extension
-    l = os.listdir('c:/lisa/rec_faciale/easy_facial_recognition-master/known_faces')
+    l = os.listdir('c:/lisa/connexion//known_faces')
     liste = [x.split('.')[0] for x in l]
     return liste
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque
         global prevImg
 
         if len(sys.argv) < 2:
-            filepath = "../rec_faciale/easy_facial_recognition-master\known_faces/" + str(id_photo) + ".jpg"  # chemin du repertoire où on veut mettre le fichier
+            filepath = "../connexion\known_faces/" + str(id_photo) + ".jpg"  # chemin du repertoire où on veut mettre le fichier
         else:
             filepath = sys.argv[1]
 
