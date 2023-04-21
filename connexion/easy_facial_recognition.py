@@ -12,13 +12,21 @@ import ntpath
 #parser.add_argument('-i', '--input', type=str, required=True, help='directory of input known faces')
 #parser = argparse.ArgumentParser(description='Easy Facial Recognition App')
 
-print('[INFO] Starting System...')
-print('[INFO] Importing pretrained model..')
-pose_predictor_68_point = dlib.shape_predictor("pretrained_model/shape_predictor_68_face_landmarks.dat")
-pose_predictor_5_point = dlib.shape_predictor("pretrained_model/shape_predictor_5_face_landmarks.dat")
-face_encoder = dlib.face_recognition_model_v1("pretrained_model/dlib_face_recognition_resnet_model_v1.dat")
-face_detector = dlib.get_frontal_face_detector()
-print('[INFO] Importing pretrained model..')
+def debut():
+    global pose_predictor_68_point
+    global face_encoder
+    global face_detector
+    print('[INFO] Starting System...')
+    print('[INFO] Importing pretrained model..')
+
+    pose_predictor_68_point= dlib.shape_predictor("pretrained_model/shape_predictor_68_face_landmarks.dat")
+    global pose_predictor_5_point
+    pose_predictor_5_point = dlib.shape_predictor("pretrained_model/shape_predictor_5_face_landmarks.dat")
+
+    face_encoder = dlib.face_recognition_model_v1("pretrained_model/dlib_face_recognition_resnet_model_v1.dat")
+
+    face_detector = dlib.get_frontal_face_detector()
+    print('[INFO] Importing pretrained model..')
 
 
 def transform(image, face_locations):
@@ -112,6 +120,7 @@ def my_reco():
 
 
 #    args = parser.parse_args()
+    debut()
 
     print('[INFO] Importing faces...')
  #   face_to_encode_path = Path(args.input)
