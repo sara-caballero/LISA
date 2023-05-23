@@ -14,7 +14,6 @@ def login():
 
     cur = conn.cursor()
     cur.execute("select * from eleve where email=%s and mdp=%s", (email, mdp))
-#    cur.execute("select * from intervenant where email=%s and mdp=%s", (email, mdp)) #erreur de email
 
     row = cur.fetchone()
     if row is None:
