@@ -4,13 +4,15 @@ import cv2
 import sys
 from PIL import Image, ImageTk
 
-
-def files_known_faces():  # Retourne un tableau avec les noms de fichiers du dossier known_faces au moment de l'execution sans l'extension
+# Retourne un tableau avec les noms de fichiers du dossier 
+# known_faces au moment de l'execution sans l'extension
+def files_known_faces():  
     l = os.listdir('c:/lisa/connexion//known_faces')
     liste = [x.split('.')[0] for x in l]
     return liste
 
-num = list(map(int,files_known_faces()))  # Covertit la liste du max_know_faces() en liste en int
+# Covertit la liste du max_know_faces() en liste en int
+num = list(map(int,files_known_faces()))  
 max_photo = max(num)  #Stocke le max dans max_photo
 
 def next_id_photo():
