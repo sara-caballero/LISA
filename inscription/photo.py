@@ -5,7 +5,7 @@ import sys
 from PIL import Image, ImageTk
 
 
-def files_known_faces():  # Retourne un tableau avec les noms de fichiers (String) du dossier known_faces au moment de l'execution sans l'extension
+def files_known_faces():  # Retourne un tableau avec les noms de fichiers du dossier known_faces au moment de l'execution sans l'extension
     l = os.listdir('c:/lisa/connexion//known_faces')
     liste = [x.split('.')[0] for x in l]
     return liste
