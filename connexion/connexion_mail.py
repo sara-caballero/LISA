@@ -16,6 +16,10 @@ def login():
     conn = MySQLdb.connect("172.16.20.125", "dba", "ghjk", "lisa_db")
     cur = conn.cursor()
     cur.execute("select * from eleve where email=%s and mdp=%s", (email, mdp))
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Authentification
     row = cur.fetchone()
 
     if row is None:

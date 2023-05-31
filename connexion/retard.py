@@ -69,4 +69,4 @@ pdf_file = "fichier.pdf"
 command = 'START /B /WAIT "" "C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe" /t "{}"'.format(pdf_file)
 
 # Lancer la commande d'impression
-#subprocess.run(command, shell=True)
+subprocess.run(command, shell=True)
