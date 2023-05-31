@@ -33,7 +33,7 @@ if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque
 
         button.place_forget()
         button1 = tk.Button(mainWindow, text="C'est une bonne photo", command=saveAndExit)
-        button2 = tk.Button(mainWindow, text="Re-essayer", command=resume)
+        button2 = tk.Button(mainWindow, text="Réessayer", command=resume)
         button1.place(anchor=tk.CENTER, relx=0.2, rely=0.9, width=150, height=50)
         button2.place(anchor=tk.CENTER, relx=0.8, rely=0.9, width=150, height=50)
         button1.focus()

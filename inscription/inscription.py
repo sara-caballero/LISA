@@ -6,8 +6,6 @@ from photo import id_photo
 import re
 import hashlib
 
-
-
 welcome_window = Tk()
 welcome_window.title("S'inscrire à LISA")
 welcome_window.geometry("600x250")
@@ -24,9 +22,10 @@ def enter_data(): #Inserer les données de la persone dans la BDD
     nom = last_name_entry.get()
     email = email_entry.get()
     mdp = password_entry.get()
- #   mdp = hashlib.md5(mdp.encode('utf-8')).hexdigest()
+    mdp = hashlib.md5(mdp.encode('utf-8')).hexdigest()
     mdp_c = password_c_entry.get()
-  #  mdp_c = hashlib.md5(mdp.encode('utf-8')).hexdigest()
+    mdp_c = hashlib.md5(mdp_c.encode('utf-8')).hexdigest()
+
 
 
     email_regex = re.compile(r"[^@\s]+@[^@\s]+\.[a-zA-Z0-9]+$")
@@ -38,7 +37,7 @@ def enter_data(): #Inserer les données de la persone dans la BDD
                 print("Mail: ", email)
                 print("Id_photo : ", id_photo)
                 print("Choix : ", choix.get())
-                conn = MySQLdb.connect("172.16.20.140", "dba", "ghjk", "lisa_db")
+                conn = MySQLdb.connect("172.16.20.129", "dba", "ghjk", "lisa_db")
 
                 if choix.get()!=0:
 

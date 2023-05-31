@@ -5,11 +5,12 @@ import MySQLdb
 from tkinter import messagebox
 
 
-
 welcome_window = Tk()
 welcome_window.title("Se connecter à LISA")
 welcome_window.geometry("400x100")
 
+nom = None
+prenom = None
 
 def open_connexion_mail():
     os.system("connexion_mail.py")
@@ -22,7 +23,7 @@ def open_reco_faciale():
         messagebox.showerror("Error", "Visage pas reconnu. Veuillez vous inscrire à LISA ou vous identifier avec votre e-mail.")
         exit(1)
     print(type(nom_reco))
-    conn = MySQLdb.connect("172.16.20.140", "dba", "ghjk", "lisa_db")
+    conn = MySQLdb.connect("172.16.20.125", "dba", "ghjk", "lisa_db")
     cur = conn.cursor()
     cur.execute("select * from eleve where id_photo=%s", (nom_reco))
     row = cur.fetchone()
@@ -36,14 +37,19 @@ def open_reco_faciale():
             nom = row[3]
             prenom = row[4]
             messagebox.askquestion("Success", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
-            print(row)
-            print(type(row))
+
+            # Stocker les valeurs de nom et prenom dans le fichier texte
+            with open("donnees.txt", "w") as file:
+                file.write(nom + "\n")
+                file.write(prenom + "\n")
     else:
         nom = row[3]
         prenom = row[4]
         messagebox.askquestion("Success", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
-        print(row)
-        print(type(row))
+        # Stocker les valeurs de nom et prenom dans le fichier texte
+        with open("donnees.txt", "w") as file:
+            file.write(nom + "\n")
+            file.write(prenom + "\n")
 
     conn.close()
 
