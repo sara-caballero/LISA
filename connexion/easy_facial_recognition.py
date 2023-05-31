@@ -8,8 +8,6 @@ from pathlib import Path
 import os
 import ntpath
 
-#parser.add_argument('-i', '--input', type=str, required=True, help='directory of input known faces')
-#parser = argparse.ArgumentParser(description='Easy Facial Recognition App')
 
 def debut():
     global pose_predictor_68_point
@@ -116,7 +114,6 @@ def my_reco():
     debut()
 
     print('[INFO] Importing faces...')
- #   face_to_encode_path = Path(args.input)
     face_to_encode_path = "known_faces"
     get_fichiers(face_to_encode_path)
 

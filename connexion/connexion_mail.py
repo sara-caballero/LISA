@@ -13,13 +13,12 @@ def login():
     email = email_entry.get()
     mdp = hashlib.md5(password_entry.get().encode('utf-8')).hexdigest()
 
-    conn = MySQLdb.connect("172.16.20.125", "dba", "ghjk", "lisa_db")
+  #  conn = MySQLdb.connect("172.16.20.125", "dba", "ghjk", "lisa_db")
+    conn = MySQLdb.connect("127.0.0.1", "root", "", "lisa_db")
+
     cur = conn.cursor()
     cur.execute("select * from eleve where email=%s and mdp=%s", (email, mdp))
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Authentification
     row = cur.fetchone()
 
     if row is None:

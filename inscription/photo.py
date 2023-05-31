@@ -7,9 +7,9 @@ from PIL import Image, ImageTk
 # Retourne un tableau avec les noms de fichiers du dossier 
 # known_faces au moment de l'execution sans l'extension
 def files_known_faces():  
-    l = os.listdir('c:/lisa/connexion//known_faces')
-    liste = [x.split('.')[0] for x in l]
-    return liste
+    fichiers = os.listdir('c:/projets_dev/lisa/connexion//known_faces')
+    fichiersSansExtension = [x.split('.')[0] for x in fichiers]
+    return fichiersSansExtension
 
 # Covertit la liste du max_know_faces() en liste en int
 num = list(map(int,files_known_faces()))  
@@ -22,14 +22,13 @@ def next_id_photo():
 
 id_photo = next_id_photo()
 
-
 if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque je l'importe dans inscription.py il faut mettre ça
 
     fileName = os.environ['ALLUSERSPROFILE'] + "\WebcamCap.txt"
     cancel = False
 
 
-    def prompt_ok(event=0):
+    def prompt_ok():
         global cancel, button, button1, button2
         cancel = True
 
@@ -41,7 +40,7 @@ if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque
         button1.focus()
 
 
-    def saveAndExit(event=0):
+    def saveAndExit():
         global prevImg
 
         if len(sys.argv) < 2:
@@ -49,12 +48,11 @@ if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque
         else:
             filepath = sys.argv[1]
 
-        print("Le chemin d'accès: " + filepath)
         prevImg.save(filepath)
         mainWindow.quit()
 
 
-    def resume(event=0):
+    def resume():
         global button1, button2, button, lmain, cancel
 
         cancel = False

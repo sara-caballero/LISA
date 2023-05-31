@@ -11,8 +11,6 @@ welcome_window.title("S'inscrire à LISA")
 welcome_window.geometry("600x250")
 
 radio = IntVar()
-
-
 choix = IntVar()
 choix.set(0)
 
@@ -25,55 +23,69 @@ def enter_data(): #Inserer les données de la persone dans la BDD
     mdp = hashlib.md5(mdp.encode('utf-8')).hexdigest()
     mdp_c = password_c_entry.get()
     mdp_c = hashlib.md5(mdp_c.encode('utf-8')).hexdigest()
-
-
-
     email_regex = re.compile(r"[^@\s]+@[^@\s]+\.[a-zA-Z0-9]+$")
 
     if prenom and nom and email and mdp and mdp_c:
         if mdp == mdp_c:
             if email_regex.match(email):
-                print("Prenom: ", prenom, "Nom: ", nom)
-                print("Mail: ", email)
-                print("Id_photo : ", id_photo)
-                print("Choix : ", choix.get())
-                conn = MySQLdb.connect("172.16.20.129", "dba", "ghjk", "lisa_db")
+               # conn = MySQLdb.connect("172.16.20.129", "dba", "ghjk", "lisa_db")
+                conn = MySQLdb.connect("127.0.0.1", "root", "", "lisa_db")
+                cursor = conn.cursor()
 
-                if choix.get()!=0:
+                # Vérifier si l'email existe déjà dans la table "eleve"
+                email_query = "SELECT COUNT(*) FROM eleve WHERE email = %s"
+                cursor.execute(email_query, (email,))
+                result = cursor.fetchone()
 
-                    if choix.get()==1:
-                    # Insert Data
-                        data_insert_query = '''INSERT INTO eleve (id_promotion, prenom, nom, email, mdp, id_photo) VALUES 
-                            (%s, %s, %s, %s, %s, %s)'''
-                        data_insert_tuple = (1, prenom, nom, email,
-                                             mdp, id_photo)
-                        cursor = conn.cursor()
-                        cursor.execute(data_insert_query, data_insert_tuple)
-                        conn.commit()
-                        conn.close()
+                if result[0] > 0:
+                    messagebox.showwarning(title="Erreur", message="Cet utilisateur est déjà inscrit.")
 
-
-                    if choix.get()==2:
-                        data_insert_query = '''INSERT INTO intervenant ( prenom, nom, email, mdp, id_photo) VALUES 
-                                                (%s, %s, %s, %s, %s)'''
-                        data_insert_tuple = (prenom, nom, email,
-                                             mdp, id_photo)
-                        cursor = conn.cursor()
-                        cursor.execute(data_insert_query, data_insert_tuple)
-                        conn.commit()
-                        conn.close()
                 else:
-                    messagebox.showwarning(title="Error", message="Êtes-vous un(e) étudiant(e) ou un(e) intervenant(e) ?")
+                    if choix.get()!=0:
+
+                        print("L'utilisateur avec les données suivants a été inscrit : ")
+                        print("Prenom: ", prenom, "Nom: ", nom)
+                        print("Nom: ", nom)
+                        print("E-Mail: ", email)
+                        print("Id_photo : ", id_photo)
+
+                        if choix.get() == 1:
+                            print("Eleve/Intervenant : Eleve")
+                            data_insert_query = '''INSERT INTO eleve (id_promotion, prenom, nom, email, mdp, id_photo) VALUES 
+                                (%s, %s, %s, %s, %s, %s)'''
+                            data_insert_tuple = (1, prenom, nom, email,
+                                                 mdp, id_photo)
+
+                            cursor.execute(data_insert_query, data_insert_tuple)
+                            conn.commit()
+                            conn.close()
+
+                        if choix.get() == 2:
+                            print("Eleve/Intervenant : Intervenant")
+
+                            data_insert_query = '''INSERT INTO intervenant ( prenom, nom, email, mdp, id_photo) VALUES 
+                                                    (%s, %s, %s, %s, %s)'''
+                            data_insert_tuple = (prenom, nom, email,
+                                                 mdp, id_photo)
+                            cursor = conn.cursor()
+                            cursor.execute(data_insert_query, data_insert_tuple)
+                            conn.commit()
+                            conn.close()
+
+                    else:
+                        messagebox.showerror(title="Error", message="Êtes-vous un(e) étudiant(e) ou un(e) intervenant(e) ?")
 
             else:
-                messagebox.showwarning(title="Error", message="Veuillez mettre un adresse mail valide")
+                    messagebox.showerror(title="Error", message="Veuillez mettre un adresse e-mail valide.")
 
         else:
-            messagebox.showwarning(title="Error", message="Veuillez mettre le même mot de passe")
+                messagebox.showerror(title="Error", message="Veuillez entrer le même mot de passe.")
 
     else:
-        messagebox.showwarning(title="Error", message="Veuillez remplir tous les champs")
+        messagebox.showerror(title="Error", message="Veuillez remplir tous les champs.")
 
+
+#Active le bouton submit_button après avoir pris la photo et met à jour le label pour indiquer que la photo a été prise
 def open_photo():
     os.system("photo.py")
     submit_button['state'] = NORMAL
@@ -131,9 +143,7 @@ photo_label = Label(welcome_window, text="Veuillez prendre une photo ! ")
 photo_label.grid(row=8, column=1)
 
 submit_button = Button(welcome_window, text="OK", command=enter_data, state=DISABLED)
-
 submit_button.grid(row=9, column=0)
-
 
 
 welcome_window.mainloop()
