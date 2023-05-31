@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LISA.iml" filepath="$PROJECT_DIR$/.idea/LISA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/inscription.iml" filepath="$PROJECT_DIR$/.idea/inscription.iml" />
     </modules>
   </component>
 </project>

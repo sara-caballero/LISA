@@ -4,22 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e51a657-0ed1-496e-b2d0-2a45caef0ba0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LISA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="977033c5-6af6-4b4d-bf32-9c9d51e21df5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion/connexion_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/connexion/connexion_mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion/easy_facial_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/connexion/easy_facial_recognition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription/inscription.py" beforeDir="false" afterPath="$PROJECT_DIR$/inscription/inscription.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription/photo.py" beforeDir="false" afterPath="$PROJECT_DIR$/inscription/photo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/connexion.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/easy_facial_recognition-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/connexion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/connexion_mail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/easy_facial_recognition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/logo-irup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/logo-istp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/pretrained_model/dlib_face_recognition_resnet_model_v1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/pretrained_model/shape_predictor_5_face_landmarks.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/pretrained_model/shape_predictor_68_face_landmarks.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion/retard.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/.idea/inscription.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/inscription.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inscription/photo.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,41 +54,41 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2Om9k6bV2Go6UHUjQZU4Duuslwh" />
+  <component name="ProjectId" id="2NHLzcfPkjueuwEUr5MCnlspbmO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/projets_dev/LISA",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/projets_dev/lisa"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projets_dev\lisa" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\lis\LISA\connexion" />
+      <recent name="C:\lisa\inscription" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.inscription">
-    <configuration name="connexion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LISA" />
+  <component name="RunManager" selected="Python.retard">
+    <configuration name="connexion_mail" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="inscription" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/connexion" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connexion/connexion.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connexion_mail.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,19 +97,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="connexion_mail" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LISA" />
+    <configuration name="connexion_reco" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="inscription" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/connexion" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connexion/connexion_mail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connexion_reco.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,18 +119,18 @@
       <method v="2" />
     </configuration>
     <configuration name="inscription" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LISA" />
+      <module name="inscription" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/inscription" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inscription/inscription.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inscription.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,19 +139,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="photo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LISA" />
+    <configuration name="inscription2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="inscription" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/inscription" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inscription/photo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inscription2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,19 +160,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="retard (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LISA" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="inscription" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/connexion" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connexion/retard.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="retard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="inscription" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/retard.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,22 +204,22 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.inscription" />
-        <item itemvalue="Python.photo" />
-        <item itemvalue="Python.retard (1)" />
-        <item itemvalue="Python.connexion" />
+        <item itemvalue="Python.retard" />
+        <item itemvalue="Python.connexion_reco" />
         <item itemvalue="Python.connexion_mail" />
+        <item itemvalue="Python.inscription" />
+        <item itemvalue="Python.inscription2" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1e51a657-0ed1-496e-b2d0-2a45caef0ba0" name="Changes" comment="" />
-      <created>1682155030162</created>
+      <changelist id="977033c5-6af6-4b4d-bf32-9c9d51e21df5" name="Changes" comment="" />
+      <created>1679316324529</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682155030162</updated>
+      <updated>1679316324529</updated>
     </task>
     <servers />
   </component>

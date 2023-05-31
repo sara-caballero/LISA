@@ -10,10 +10,10 @@ def create_pdf():
     pdf.add_page()
 
     # Logo à gauche
-    pdf.image("logo-istp.png", x=10, y=10, w=30)
+    pdf.image("img/logo-istp.png", x=10, y=10, w=30)
 
     # Logo à droite
-    pdf.image("logo-irup.png", x=170, y=10, w=30)
+    pdf.image("img/logo-irup.png", x=170, y=10, w=30)
 
     # Titre "Fiche de retard"
     pdf.set_font("Arial", "B", size=16)
@@ -49,10 +49,10 @@ def create_pdf():
     pdf.cell(0, 10, txt="Signature de l'intervenant", ln=True)
     pdf.cell(0, 10, txt="", ln=True)  # Grand carreau pour la signature de l'intervenant
 
-    pdf.output("fichier.pdf")
+    pdf.output(f"temp/fiche_retard_{str(nom)}_{str(prenom)}.pdf")
     return "Fichier PDF créé avec succès."
 
-with open("donnees.txt", "r") as file:
+with open("temp/donnees.txt", "r") as file:
     data = file.read().splitlines()
     if len(data) == 2:
         nom = data[0]
@@ -69,4 +69,4 @@ pdf_file = "fichier.pdf"
 command = 'START /B /WAIT "" "C:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe" /t "{}"'.format(pdf_file)
 
 # Lancer la commande d'impression
-subprocess.run(command, shell=True)
+#subprocess.run(command, shell=True)

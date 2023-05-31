@@ -7,7 +7,7 @@ from PIL import Image, ImageTk
 # Retourne un tableau avec les noms de fichiers du dossier 
 # known_faces au moment de l'execution sans l'extension
 def files_known_faces():  
-    fichiers = os.listdir('c:/projets_dev/lisa/connexion//known_faces')
+    fichiers = os.listdir('c:/projets_dev/lisa//known_faces')
     fichiersSansExtension = [x.split('.')[0] for x in fichiers]
     return fichiersSansExtension
 
@@ -44,7 +44,7 @@ if __name__ == '__main__':   #si je veux pas que photo.py soit exécuté lorsque
         global prevImg
 
         if len(sys.argv) < 2:
-            filepath = "../connexion\known_faces/" + str(id_photo) + ".jpg"  # chemin du repertoire où on veut mettre le fichier
+            filepath = "known_faces/" + str(id_photo) + ".jpg"  # chemin du repertoire où on veut mettre le fichier
         else:
             filepath = sys.argv[1]
 
