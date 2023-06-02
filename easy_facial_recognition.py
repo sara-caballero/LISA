@@ -78,8 +78,8 @@ def easy_face_reco(frame, known_face_encodings, known_face_names):
 
     for (top, right, bottom, left), name in zip(face_locations_list, face_names):
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
-        cv2.rectangle(frame, (left, bottom - 30), (right, bottom), (0, 255, 0), cv2.FILLED)
-        cv2.putText(frame, name, (left + 2, bottom - 2), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 1)
+       # cv2.rectangle(frame, (left, bottom - 30), (right, bottom), (0, 255, 0), cv2.FILLED)
+     #   cv2.putText(frame, name, (left + 2, bottom - 2), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 1)
 
     for shape in landmarks_list:
         for (x, y) in shape:
@@ -129,6 +129,7 @@ def my_reco():
     print('[INFO] Detecting...')
 
     reco = False
+    nom_detecte = ""
 
     while not reco:
         ret, frame = video_capture.read()
@@ -137,6 +138,7 @@ def my_reco():
 
 
         if nom_detecte != "":
+            cv2.waitKey(2000)  # Délai d'attente de 2 secondes après la détection d'un visage
             reco = True
 
     print('[INFO] Stopping System')

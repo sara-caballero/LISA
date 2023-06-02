@@ -30,7 +30,7 @@ def login():
         prenom = row[2]
 
         # Stocker les valeurs de nom et prenom dans le fichier texte
-        with open("temp/donnees.txt", "w") as file:
+        with open("temp/donnees*.txt", "w") as file:
             file.write(nom + "\n")
             file.write(prenom + "\n")
 
