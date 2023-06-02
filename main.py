@@ -194,3 +194,13 @@ def lisa_loop():
 window.after(1000, threading.Thread(target=lisa_loop).start())
 window.mainloop()
 
+import interface
+
+
+def main():
+    interface.window.after(1000, interface.threading.Thread(target=interface.lisa_loop).start())
+    interface.window.mainloop()
+
+
+if __name__ == "__main__":
+    main()
