@@ -10,6 +10,7 @@ welcome_window.geometry("600x220")
 
 welcome_window.configure(bg="#F5F5F5")
 
+is_connected = False
 nom = None
 prenom = None
 
@@ -39,21 +40,21 @@ def open_reco_faciale(): # Fonction pour ouvrir la reconnaissance faciale
         else:
             nom = row[1]
             prenom = row[2]
-           # reponse = messagebox.askquestion("Succès", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
+            reponse = messagebox.askquestion("Succès", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
     else:
         nom = row[1]
         prenom = row[2]
 
     if nom is not None and prenom is not None:
         reponse = messagebox.askquestion("Succès", "Bienvenue, êtes-vous {} {} ?".format(prenom, nom))
-        # Stocker les valeurs de nom et prenom dans le fichier texte
-        with open("donnees.txt", "w") as file:
-            file.write(nom + "\n")
-            file.write(prenom + "\n")
-
+        # Stocker les valeurs de nom et prenom du fichier texte
     if reponse == 'yes':
         messagebox.showinfo("Confirmation", "Super, bienvenue {} !".format(prenom))
+        with open("temp/donnees.txt", "w") as file:
+            file.write(nom + "\n")
+            file.write(prenom + "\n")
         welcome_window.destroy()
+
     else:
         messagebox.showinfo("Confirmation", "Veuillez contacter l'administrateur de LISA pour résoudre ce problème. En attendant, veuillez vous connecter avec la méthode classique en utilisant votre email et votre mot de passe.")
 

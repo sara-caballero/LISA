@@ -4,8 +4,8 @@ from speech_recognition import Recognizer, Microphone
 import playsound as ps
 import random as rand
 from connexion_bdd import connect_to_database
+import os
 import threading
-
 
 # Initialisation de la variable globale "text": la reco vocale enregistre en permanence, et tant que le
 # mot "Lisa" n'est pas prononcé, il garde la valeur 'Continue'
@@ -19,14 +19,60 @@ window['bg'] = '#D2DBFF'
 window.attributes("-fullscreen", True)
 
 
+
+
+#Fonction qui retourne True si un fichier nom_fichier est présent dans chemin_dossier
+def fichier_existe(nom_fichier, chemin_dossier):
+    chemin_complet = os.path.join(chemin_dossier, nom_fichier)
+    return os.path.isfile(chemin_complet)
+
+# Chemin du dossier temporaire
+chemin_dossier = "temp"
+
+# Nom du fichier à chercher
+nom_fichier = "donnees.txt"
+
 def open_auth():
     subprocess.call(['python', 'inscription.py'])
 
 
 def open_conn():
+    is_connected = False
+    global welcome_label
     subprocess.call(['python', 'connexion_reco.py'])
+    if fichier_existe(nom_fichier, chemin_dossier): # Si le fichier existe, la personne a réussi à s'authentifier
+        is_connected = True
+        retard_button.place(x="80", y="700")
+        deconnexion_button.place(x="280", y="700")
+        auth_button.place_forget()
+        regis_button.place_forget()
+        with open("temp/donnees.txt", "r") as file:
+            data = file.read().splitlines()
+            if len(data) == 2:
+                nom = data[0]
+                prenom = data[1]
+        welcome_label = Label(window, text="Bonjour {} {}".format(prenom, nom), font=("Arial", 22), fg="black", bg="#D2DBFF")
+        welcome_label.pack(side=BOTTOM, pady=20, anchor="n")
 
 
+    print("Utilisateur authentifié ? : ", is_connected)
+    print(nom, prenom)
+
+def open_retard():
+    subprocess.call(['python', 'retard.py'])
+
+
+def deconnexion():
+    filepath = "temp/donnees.txt"
+    if os.path.exists(filepath):
+        os.remove(filepath)
+        print("Le fichier temporaire a été supprimé avec succès. ")
+        print("L'utilisateur a été deconnecté. ")
+    auth_button.place(x="80", y="600")
+    regis_button.place(x="280", y="600")
+    welcome_label.pack_forget()
+    deconnexion_button.place_forget()
+    retard_button.place_forget()
 
 # Fonction qui permet de changer de frame
 def switch_canvas(n):
@@ -88,6 +134,16 @@ regis_button = Button(window, text="S'inscrire", font=("Arial", 14), height=2, w
                       command=open_auth)
 regis_button.place(x="280", y="600")
 
+retard_button = Button(window, text="Fiche de retard", font=("Arial", 14), height=2, width=12,
+                       command=open_retard)
+
+deconnexion_button = Button(window, text="Déconnexion", font=("Arial", 14), height=2, width=12,
+                            command=deconnexion)
+
+
+
+
+
 # Initialisation des variables contenants les valeurs extraites de la bdd
 description = ''
 date_debut = ''
@@ -104,14 +160,14 @@ cursor.execute("SELECT * FROM evenement WHERE date_debut >= CURDATE() ORDER BY d
 result = cursor.fetchall()
 if cursor.rowcount == 1:
     for row in result:
-        titre = row[0]
-        description = row[1]
-        date_debut = str(row[2])
-        date_fin = str(row[3])
-        heure_debut = str(row[4])
-        heure_fin = str(row[5])
-        salle = row[6]
-        lieu = row[7]
+        titre = row[1]
+        description = row[2]
+        date_debut = str(row[3])
+        date_fin = str(row[4])
+        heure_debut = str(row[5])
+        heure_fin = str(row[6])
+        salle = row[7]
+        lieu = row[8]
 
     if date_fin != '' and salle == '':
         evenement = 'Evènement : ' + description + "\n le " + date_debut + " à " \
@@ -165,7 +221,7 @@ def lisa_loop():
                 num = rand.randint(2, 6)
                 switch_canvas(num)
                 ask = rand.choice(['1', '2', '3', '4', '5'])
-                ask_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_ask{ask}.mp3'
+                ask_str = f'C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_ask{ask}.mp3'
                 ps.playsound(ask_str)
                 default_canvas(num)
 
@@ -183,19 +239,18 @@ def lisa_loop():
                         )
 
                     except:
-                        text = 'error'
                         timeout = rand.choice(['1', '2', '3', '4'])
-                        timeout_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_timeout{timeout}.mp3'
+                        timeout_str = f'C:\\projets_dev\\lisa-all\\LISA\\LISA\\lisaspeech\\lisa_timeout{timeout}.mp3'
                         ps.playsound(timeout_str)
                         text = 'continue'
                         break
 
-                    if text != 'error':
+                    if text != 'Continue':
                         if "retard" in text:
                             num = rand.randint(2, 6)
                             switch_canvas(num)
                             retard = rand.choice(['1', '2', '3'])
-                            retard_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_retard{retard}.mp3'
+                            retard_str = f'C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_retard{retard}.mp3'
                             ps.playsound(retard_str)
                             text = 'continue'
                             default_canvas(num)
@@ -205,33 +260,34 @@ def lisa_loop():
                             switch_canvas(num)
 
                             # inviter à entrer les informations d'insrcription
-                            ps.playsound('C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_signin.mp3')
+                            ps.playsound('C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_signin.mp3')
 
                             # expliquer que l'on va prendre une photo
-                            ps.playsound('C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_photo.mp3')
+                            ps.playsound('C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_photo.mp3')
+                            subprocess.call(['python', 'inscription.py'])
 
                             # photo prise
-                            ps.playsound('C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_clic1.mp3')
-                            ps.playsound('C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_clic2.mp3')
+                            ps.playsound('C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_clic1.mp3')
+                            ps.playsound('C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_clic2.mp3')
 
                             text = 'continue'
                             default_canvas(num)
                             break
-                        elif "bonjour" in text:
+                        elif "Bonjour" in text:
                             switch_canvas(2)
                             greet = rand.choice(['1', '2', '3', '4'])
-                            greet_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_greetings{greet}.mp3'
+                            greet_str = f'C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_greetings{greet}.mp3'
                             ps.playsound(greet_str)
                             default_canvas(2)
-                        elif "salut" in text:
+                        elif "Salut" in text:
                             switch_canvas(2)
                             greet = rand.choice(['1', '2', '3', '4'])
-                            greet_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_greetings{greet}.mp3'
+                            greet_str = f'C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_greetings{greet}.mp3'
                             ps.playsound(greet_str)
                             default_canvas(2)
                         else:
                             switch_canvas(7)
                             error = rand.choice(['1', '2', '3'])
-                            error_str = f'C:\\projets_dev\\lisa-all\\lisaspeech\\lisa_error{error}.mp3'
+                            error_str = f'C:\\projets_dev\\lisa-all\\LISA\\lisaspeech\\lisa_error{error}.mp3'
                             ps.playsound(error_str)
                             default_canvas(7)
